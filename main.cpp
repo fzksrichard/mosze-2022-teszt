@@ -4,21 +4,21 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS]; //hibás változónév (N_ELEMENTS)
-    std::cout << '1-100 ertekek duplazasa' //aposztróf használva idézőjel helyett, pontosvessző hiányzik sor végén
-    for (int i = 0;) //hiányzik a ciklusfeltétel és a léptetés üteme
+    int *b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+    for (int i = 0; i<N_ELEMENTS; i++)
     {
-        b[i] = i * 2; //(i+1). elemnek kell a kétszeresét venni
+        b[i] = (i+1)* 2;
     }
-    for (int i = 0; i; i++) //hibás ciklusfeltétel
+    for (int i = 0; i<N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:" //hiányzik az értékkiíratás és a pontosvessző
+        std::cout << "Ertek:" << b[i] << std::endl;
     }    
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag; //értékadás (0) hiányzik
-    for (int i = 0; i < N_ELEMENTS, i++) //szintaktikai hiba
+    int atlag=0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i] //pontosvessző hiányzik
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
